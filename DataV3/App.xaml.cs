@@ -1,17 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace DataV3
+﻿namespace DataV3
 {
+    using System;
+    using System.Linq;
+
+    using DataV3.Models;
+    using DataV3.Services;
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App
     {
+        public App()
+        {
+            var author = new Author { BirthDate = DateTime.Today, FirstName = "Pingle", LastName = "Francis" };
+
+            using (var context = new SqlContext())
+            {
+                context.Authors.Add(author);
+                context.SaveChanges();
+                var something = context.Authors.ToList();
+                Console.WriteLine("blah");
+            }
+        }
     }
 }
