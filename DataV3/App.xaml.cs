@@ -13,14 +13,12 @@
     {
         public App()
         {
-            var author = new Author { BirthDate = DateTime.Today, FirstName = "Pingle", LastName = "Francis" };
+            var author = new Author { BirthDate = DateTime.Today, FirstName = "Tingle", LastName = "Francis" };
 
-            using (var context = new SqliteContext())
+            using (var context = new MySqlContext())
             {
                 context.Authors.Add(author);
                 context.SaveChanges();
-                var something = context.Authors.ToList();
-                Console.WriteLine("blah");
             }
         }
     }
