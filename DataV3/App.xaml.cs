@@ -15,7 +15,7 @@
         {
             var author = new Author { BirthDate = DateTime.Today, FirstName = "Pingle", LastName = "Francis" };
 
-            using (var context = new SqlContext())
+            using (var context = new SqliteContext())
             {
                 context.Authors.Add(author);
                 context.SaveChanges();
