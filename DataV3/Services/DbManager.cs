@@ -34,8 +34,8 @@
                 case ConnectionType.Sqlite:
                     this.createContext = () => new SqliteContext();
                     return;
-                case ConnectionType.MySql:
-                    this.createContext = () => new MySqlContext();
+                case ConnectionType.Postgres:
+                    this.createContext = () => new PostgresContext();
                     return;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(connectionType), connectionType, null);
@@ -59,7 +59,6 @@
         {
             using (var context = this.createContext())
             {
-                // TODO: Fix mysql. Problem might be the decorator above the mysqlcontext class
                 return context.Authors.Include(x => x.Books).ToList();
             }
         }

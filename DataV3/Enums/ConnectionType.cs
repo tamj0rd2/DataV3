@@ -6,6 +6,6 @@
 
         Sqlite,
 
-        MySql
+        Postgres
     }
 }

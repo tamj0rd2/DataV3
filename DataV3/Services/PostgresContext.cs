@@ -4,18 +4,15 @@
 
     using DataV3.Models;
 
-    using MySql.Data.Entity;
-
-    [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    public class MySqlContext : InventoryContext
+    public class PostgresContext : InventoryContext
     {
-        public MySqlContext()
-            : base("name=InventoryMySql")
+        public PostgresContext() : base("name=InventoryPostgres")
         {
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("public");
         }
     }
 }

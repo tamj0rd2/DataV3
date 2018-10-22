@@ -9,7 +9,7 @@
     {
         public HomePageViewModel()
         {
-            var connectionTypes = new List<ConnectionType> { ConnectionType.Sql, ConnectionType.Sqlite, ConnectionType.MySql };
+            var connectionTypes = new List<ConnectionType> { ConnectionType.Sql, ConnectionType.Sqlite, ConnectionType.Postgres };
             this.ConnectionOptions = connectionTypes.Select(ct => new ConnectionViewModel(ct));
             this.SelectedIndex = 0;
         }
