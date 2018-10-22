@@ -4,7 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using DataV3.Enums;
     using DataV3.Models;
+    using DataV3.Services;
 
     public class ListAuthorsViewModel : ObservableViewModel
     {
@@ -35,5 +37,7 @@
         public DateTime BirthdayFilterDate { get; set; }
 
         public bool IsBirthdayFilterApplied { get; set; }
+
+        public bool StoredProceduresEnabled => DbManager.Instance.ConnectionType == ConnectionType.Sql;
     }
 }

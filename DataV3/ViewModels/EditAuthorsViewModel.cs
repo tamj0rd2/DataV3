@@ -15,30 +15,5 @@
             this.LastName = author.LastName;
             this.Birthday = author.BirthDate;
         }
-
-        public bool IsValid
-        {
-            get
-            {
-                // TODO: use the correct way to validate view models like we do in MVC ;|
-                // TODO: and reduce all this duplicated code from AddAuthorPage/ViewModel
-                if (string.IsNullOrWhiteSpace(this.FirstName))
-                {
-                    return false;
-                }
-
-                if (string.IsNullOrWhiteSpace(this.LastName))
-                {
-                    return false;
-                }
-
-                if (this.Birthday == DateTime.MinValue)
-                {
-                    return false;
-                }
-
-                return true;
-            }
-        }
     }
 }

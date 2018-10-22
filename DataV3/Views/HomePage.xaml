@@ -18,7 +18,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Library Inventory" Grid.ColumnSpan="2" FontSize="48"/>
+        <Label Content="Inventory" Grid.ColumnSpan="2" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <ComboBox ItemsSource="{Binding ConnectionOptions}"
                   SelectedIndex="{Binding SelectedIndex}"
                   SelectedItem="{Binding SelectedConnection, Mode=TwoWay}" 
@@ -31,6 +31,6 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <Button Grid.Row="1" Grid.Column="1" Content="Connect to Author database" Click="OnManageAuthorsClick"></Button>
+        <Button Grid.Row="1" Grid.Column="1" Content="Connect to Inventory database" Click="OnManageAuthorsClick"></Button>
     </Grid>
 </Page>

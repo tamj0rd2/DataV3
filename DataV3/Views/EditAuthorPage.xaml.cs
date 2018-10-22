@@ -22,7 +22,7 @@
 
         private void BtnSave(object sender, RoutedEventArgs e)
         {
-            if (this.viewModel.IsValid)
+            if (this.viewModel.IsValid())
             {
                 DbManager.Instance.EditAuthor(this.viewModel);
                 MessageBox.Show("Changes saved :)");

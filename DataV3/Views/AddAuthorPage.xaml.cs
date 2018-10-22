@@ -21,7 +21,7 @@
 
         private void BtnAdd(object sender, RoutedEventArgs e)
         {
-            if (this.viewModel.IsValid)
+            if (this.viewModel.IsValid())
             {
                 DbManager.Instance.AddAuthor(this.viewModel);
                 MessageBox.Show("Author added!");

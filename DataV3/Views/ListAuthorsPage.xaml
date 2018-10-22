@@ -52,9 +52,25 @@
             <Button Grid.Row="0" Grid.Column="2" Content="Delete" Click="BtnDeleteAuthor"></Button>
             <Button Grid.Row="0" Grid.Column="3" Content="Back" Click="BtnBack"></Button>
 
-            <ToggleButton IsChecked="{Binding IsBirthdayFilterApplied, Mode=TwoWay}" Grid.Row="1" Grid.Column="0" Content="Filter Authors born after date" Checked="BtnFilterAuthorsOn" Unchecked="BtnFilterAuthorsOff"></ToggleButton>
-            <DatePicker Grid.Row="1" Grid.Column="1"  SelectedDate="{Binding BirthdayFilterDate, Mode=TwoWay}" SelectedDateChanged="BirthdayFilterDateChanged" VerticalAlignment="Center"/>
-            <Button Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Content="Delete Authors with no books" Click="BtnDeleteAuthorsWithNoBooks"></Button>
+            <ToggleButton IsChecked="{Binding IsBirthdayFilterApplied, Mode=TwoWay}" 
+                          Grid.Row="1" 
+                          Grid.Column="0" 
+                          Content="Filter Authors born after date" 
+                          Checked="BtnFilterAuthorsOn" 
+                          Unchecked="BtnFilterAuthorsOff"
+                          IsEnabled="{Binding StoredProceduresEnabled, Mode=OneTime}"/>
+            <DatePicker Grid.Row="1" 
+                        Grid.Column="1"  
+                        SelectedDate="{Binding BirthdayFilterDate, Mode=TwoWay}" 
+                        SelectedDateChanged="BirthdayFilterDateChanged" 
+                        VerticalAlignment="Center"
+                        IsEnabled="{Binding StoredProceduresEnabled, Mode=OneTime}"/>
+            <Button Grid.Row="1"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    Content="Delete Authors with no books"
+                    Click="BtnDeleteAuthorsWithNoBooks"
+                    IsEnabled="{Binding StoredProceduresEnabled, Mode=OneTime}"/>
         </Grid>
     </Grid>
 </Page>

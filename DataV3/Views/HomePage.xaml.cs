@@ -23,7 +23,7 @@
 
         private void OnManageAuthorsClick(object sender, RoutedEventArgs e)
         {
-            DbManager.Instance.SetDatabaseType(this.viewModel.SelectedConnection.ConnectionType);
+            DbManager.Instance.ConnectionType = this.viewModel.SelectedConnection.ConnectionType;
             this.NavigationService?.Navigate(new ListAuthorsPage());
         }
     }
