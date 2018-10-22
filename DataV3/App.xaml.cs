@@ -11,15 +11,5 @@
     /// </summary>
     public partial class App
     {
-        public App()
-        {
-            var author = new Author { BirthDate = DateTime.Today, FirstName = "Tingle", LastName = "Francis" };
-
-            using (var context = new MySqlContext())
-            {
-                context.Authors.Add(author);
-                context.SaveChanges();
-            }
-        }
     }
 }

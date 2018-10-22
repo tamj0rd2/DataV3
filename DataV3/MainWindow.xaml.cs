@@ -2,6 +2,8 @@
 {
     using System.Windows;
 
+    using DataV3.Views;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -10,6 +12,7 @@
         public MainWindow()
         {
             this.InitializeComponent();
+            this.MainFrame.Navigate(new HomePage());
         }
     }
 }
