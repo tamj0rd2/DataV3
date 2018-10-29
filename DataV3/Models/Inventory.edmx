@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="InventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="InventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Authors">
           <Key>
             <PropertyRef Name="AuthorID" />
@@ -25,8 +25,10 @@
           <Property Name="Language" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="Format" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Books__AuthorID__01142BA1">
-          <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
+        <Association Name="FK__Books__AuthorID__2739D489">
+          <End Role="Authors" Type="Self.Authors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Authors">
@@ -41,13 +43,12 @@
         <EntityContainer Name="InventoryModelStoreContainer">
           <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Books__AuthorID__01142BA1" Association="Self.FK__Books__AuthorID__01142BA1">
+          <AssociationSet Name="FK__Books__AuthorID__2739D489" Association="Self.FK__Books__AuthorID__2739D489">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="InventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -74,7 +75,9 @@
           <NavigationProperty Name="Author" Relationship="Self.FK__Books__AuthorID__01142BA1" FromRole="Books" ToRole="Authors" />
         </EntityType>
         <Association Name="FK__Books__AuthorID__01142BA1">
-          <End Role="Authors" Type="Self.Author" Multiplicity="1" />
+          <End Role="Authors" Type="Self.Author" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Books" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Authors">
