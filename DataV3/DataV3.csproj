@@ -124,6 +124,7 @@
     <Compile Include="Services\PostgresContext.cs" />
     <Compile Include="Services\SqlContext.cs" />
     <Compile Include="Services\SqliteContext.cs" />
+    <Compile Include="Validators\InventoryValidator.cs" />
     <Compile Include="ViewModels\AddAuthorViewModel.cs" />
     <Compile Include="ViewModels\BaseAuthorViewModel.cs" />
     <Compile Include="ViewModels\ConnectionViewModel.cs" />

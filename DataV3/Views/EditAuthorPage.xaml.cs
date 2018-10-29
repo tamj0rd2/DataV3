@@ -4,6 +4,7 @@
 
     using DataV3.Models;
     using DataV3.Services;
+    using DataV3.Validators;
     using DataV3.ViewModels;
 
     /// <summary>
@@ -22,7 +23,7 @@
 
         private void BtnSave(object sender, RoutedEventArgs e)
         {
-            if (this.viewModel.IsValid())
+            if (InventoryValidator.IsValid(this.viewModel))
             {
                 DbManager.Instance.EditAuthor(this.viewModel);
                 MessageBox.Show("Changes saved :)");

@@ -26,10 +26,10 @@
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Column="0" Content="{Binding FirstName, Mode=OneWay}"></Label>
-                        <Label Grid.Column="1" Content="{Binding LastName, Mode=OneWay}"></Label>
-                        <Label Grid.Column="2" Content="{Binding BirthDate, Mode=OneWay}"></Label>
-                        <Label Grid.Column="3" Content="{Binding Books.Count, Mode=OneWay}"></Label>
+                        <Label Grid.Column="0" Content="{Binding FirstName, Mode=OneWay}" />
+                        <Label Grid.Column="1" Content="{Binding LastName, Mode=OneWay}" />
+                        <Label Grid.Column="2" Content="{Binding BirthDate, Mode=OneWay}" ContentStringFormat="dd/MM/yyyy" />
+                        <Label Grid.Column="3" Content="{Binding Books.Count, Mode=OneWay}" />
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

@@ -3,6 +3,7 @@
     using System.Windows;
 
     using DataV3.Services;
+    using DataV3.Validators;
     using DataV3.ViewModels;
 
     /// <summary>
@@ -21,7 +22,7 @@
 
         private void BtnAdd(object sender, RoutedEventArgs e)
         {
-            if (this.viewModel.IsValid())
+            if (InventoryValidator.IsValid(this.viewModel))
             {
                 DbManager.Instance.AddAuthor(this.viewModel);
                 MessageBox.Show("Author added!");

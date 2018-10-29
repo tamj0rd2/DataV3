@@ -22,7 +22,7 @@
         {
             get
             {
-                return this.authors.OrderBy(a => a.FirstName).ThenBy(a => a.LastName).ToList();
+                return this.authors.OrderBy(a => a.FirstName).ThenBy(a => a.LastName);
             }
 
             set
