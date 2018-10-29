@@ -77,11 +77,16 @@
         // A query that returns all Authors born after a certain date
         public IEnumerable<Author> GetAuthorsBornAfterDate(DateTime date)
         {
-            var query = from author in this.GetAuthors()
-                        where author.BirthDate >= date
-                        select author;
+            using (var context = this.CreateContext())
+            {
+                var authors = context.Authors.Include(x => x.Books);
 
-            return query.ToList();
+                var query = from author in authors
+                            where author.BirthDate >= date
+                            select author;
+
+                return query.ToList();
+            }
         }
 
         private InventoryContext CreateContext()
